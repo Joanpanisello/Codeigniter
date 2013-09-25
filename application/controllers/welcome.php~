@@ -3,7 +3,9 @@
 class Welcome extends CI_Controller {
 
 
-
+//	public function pepe() {
+	//		echo ""
+//	}	
 	/**
 	 * Index Page for this controller.
 	 *
