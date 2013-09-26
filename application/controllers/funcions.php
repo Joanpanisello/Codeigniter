@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Hola extends CI_Controller {
+class funcions extends CI_Controller {
 
 
 
@@ -19,14 +19,30 @@ class Hola extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function adeu()
+	public function index()
 	{
-		echo "<h1>hehe</h1>";
+		$this->load->view('menu');
 	}
 	
+	/*public function crear_usuari()
+	{
+		echo "<h1>Aqu&iacute crees el teu usuari</h1>";
+	}
 	
+	public function modificar()
+	{
+		$this->load->view('modificar');
+	}
+
+	public function eliminar()
+	{
+		echo "<h1>Aqu&iacute Elimines el teu usuari</h1>";
+	}
 	
+	*/
+
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+	
+
+

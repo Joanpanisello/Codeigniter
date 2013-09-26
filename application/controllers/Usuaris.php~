@@ -4,27 +4,20 @@ class Usuaris extends CI_Controller {
 
 
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function Crear()
+	public function crear_usuari()
 	{
-		$this->load->view('welcome_message');
+		echo "<h1>Aquí crees el teu usuari</h1>";
 	}
 	
-	
+	public function Modificar()
+	{
+		echo "<h1>Aquí Modifiques el teu usuari</h1>";
+	}
+
+	public function Eliminar()
+	{
+		echo "<h1>Aquí Elimines el teu usuari</h1>";
+	}
 	
 }
 
