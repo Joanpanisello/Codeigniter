@@ -24,23 +24,7 @@ class funcions extends CI_Controller {
 		$this->load->view('menu');
 	}
 	
-	/*public function crear_usuari()
-	{
-		echo "<h1>Aqu&iacute crees el teu usuari</h1>";
-	}
 	
-	public function modificar()
-	{
-		$this->load->view('modificar');
-	}
-
-	public function eliminar()
-	{
-		echo "<h1>Aqu&iacute Elimines el teu usuari</h1>";
-	}
-	
-	*/
-
 }
 
 	

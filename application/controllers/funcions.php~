@@ -24,7 +24,7 @@ class funcions extends CI_Controller {
 		$this->load->view('menu');
 	}
 	
-	public function crear_usuari()
+	/*public function crear_usuari()
 	{
 		echo "<h1>Aqu&iacute crees el teu usuari</h1>";
 	}
@@ -39,7 +39,7 @@ class funcions extends CI_Controller {
 		echo "<h1>Aqu&iacute Elimines el teu usuari</h1>";
 	}
 	
-	
+	*/
 
 }
 
