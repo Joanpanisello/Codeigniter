@@ -17,6 +17,11 @@ class usuaris extends CI_Controller {
 	{
 		echo "<h1>Aqu&iacute Elimines el teu usuari</h1>";
 	}
-	
+	public function llistar()
+	{
+		$this->load->view('llistar');
+	}
+
+
 	
 }

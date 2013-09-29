@@ -10,13 +10,25 @@ class usuaris extends CI_Controller {
 	
 	public function modificar()
 	{
-		echo "<h1>Aqu&iacute Modifiques el teu usuariiiiii</h1>";
+		echo "<h1>Aqu&iacute Modifiques el teu usuari</h1>";
 	}
 
 	public function eliminar()
 	{
 		echo "<h1>Aqu&iacute Elimines el teu usuari</h1>";
 	}
-	
+	public function llistar()
+	{
+		$this->load->view('llistar');
+	}
+	public function css()
+	{
+		$this->load->view('demo_table');
+	}
+	public function css_dos()
+	{
+		$this->load->view('demo_page');
+	}
+
 	
 }
