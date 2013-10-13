@@ -2,28 +2,20 @@
 <html>
 <head>
 
-<!-- DataTables CSS -->
-
-<style type="text/css" title="currentStyle">
-	@import "demo_page.css"; 
-</style>
-
 <style type="text/css" title="currentStyle">
 	@import "/bootstrap/css/bootstrap.css"; 
 </style>
 
-<!-- jQuery  
-<link rel="stylesheet" type="text/css" href="http://www.datatables.net/release-datatables/media/css/demo_table.css">
 
-<link rel="stylesheet" type="text/css" href="http://www.datatables.net/release-datatables/media/css/demo_page.css">
--->
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
- 
-<!-- DataTables -->
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
-
-
+<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -32,18 +24,27 @@ $('#users_table').dataTable();
 </script>
 
 
+	
 </head>
-<body>	
-<h1 align=center><u>Llista d'Usuaris</u></h1>
+<body>
+	<?php include('navbar_top2.txt'); ?>
+<br><br><br><br>
+<h3 align=center>Usuaris</h3>
 <br>
+
+<div align="right">
+  <a href='crear'>Crear Usuari&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</div> 
+
 <table cellpadding="0" cellspacing="0" border="0" id="users_table" class="table table-striped" width="100%">
-<thead >
+<thead bgcolor=#819FF7>
 <tr>
 <th>Usuari</th>
 <th>Adre&ccedil;a</th>
 <th>Telefon</th>
 <th>DNI</th>
 <th>ID</th>
+<th>Accions</th>
 </tr>
 </thead>
 <tbody align=center>
@@ -53,6 +54,7 @@ $('#users_table').dataTable();
 <td>665 780 624</td>
 <td>47823595v</td>
 <td>01</td>
+<td><a href='modificar/01'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
 </tr>
 <tr>
 <td>Marc Montes&oacute;</td>
@@ -60,6 +62,7 @@ $('#users_table').dataTable();
 <td>623 764 535</td>
 <td>47211849k</td>
 <td>02</td>
+<td><a href='modificar/02'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
 </tr>
 <tr>
 <td>Carlos Meca</td>
@@ -67,6 +70,7 @@ $('#users_table').dataTable();
 <td>686 345 262</td>
 <td>48926482e</td>
 <td>03</td>
+<td><a href='modificar/03'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
 </tr>
 <tr>
 <td>Adolf Comes</td>
@@ -74,8 +78,9 @@ $('#users_table').dataTable();
 <td>676 482 323</td>
 <td>47890232m</td>
 <td>04</td>
+<td><a href='modificar/04'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </body>
 </html>

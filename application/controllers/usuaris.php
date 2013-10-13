@@ -3,25 +3,33 @@
 class usuaris extends CI_Controller {
 
 
-	public function crear_usuari()
+
+	public function crear()
 	{
-		echo "<h1>Aqu&iacute crees el teu usuari</h1>";
+		$this->load->view('crear_usuari');
 	}
 	
-	public function modificar()
+	public function modificar($id)
 	{
-		echo "<h1>Aqu&iacute Modifiques el teu usuari</h1>";
+		$this->load->view('modificar_usuari');
+	
 	}
 
 	public function eliminar()
 	{
-		echo "<h1>Aqu&iacute Elimines el teu usuari</h1>";
+		$this->load->view('elimina_usuari');
 	}
+	
+
+
 	public function llistar()
 	{
 		$this->load->view('llistar');
 	}
 
+	
 
+
+	
 	
 }
