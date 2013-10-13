@@ -27,6 +27,11 @@ class usuaris extends CI_Controller {
 		$this->load->view('llistar');
 	}
 
+	public function index()
+	{
+		$this->load->view('menu');
+	}
+	
 	
 
 
