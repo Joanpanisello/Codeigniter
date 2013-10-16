@@ -33,7 +33,15 @@ class usuaris extends CI_Controller {
 	}
 	
 	
+	public function hello()
+	{
+		$this->load->model('Say_hello');
 
+ 		$data['hola'] = $this->Say_hello->hola();
+
+		$this->load->view('blog', $data);
+	}
+	
 
 	
 	

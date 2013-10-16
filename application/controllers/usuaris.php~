@@ -27,8 +27,21 @@ class usuaris extends CI_Controller {
 		$this->load->view('llistar');
 	}
 
+	public function index()
+	{
+		$this->load->view('menu');
+	}
 	
+	
+	public function hello()
+	{
+		$this->load->model('Say_hello');
 
+ 		$data['hola'] = $this->say_hello->hola();
+
+		$this->load->view('blog', $data);
+	}
+	
 
 	
 	
