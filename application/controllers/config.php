@@ -4,19 +4,21 @@ class config extends CI_Controller {
 
 
 
+
 	public function canviar_pas()
 	{
-		echo "<h1>Aqu&iacute canvies la paraula de pas</h1>";
+		$this->load->view('canviar_pas');
+		
 	}
 	
 	public function sortir()
 	{
-		echo "<h1>Aqu&iacute pots sortir</h1>";
+		$this->load->view('sortir');
 	}
 
 
-	
-	
 
 
 }
+
+

@@ -4,7 +4,7 @@
 	<?php include('includes.txt'); ?>
 </head>
 <body>
-	<?php include('navbar_top2.txt'); ?>
+	<?php include('navbar_top.txt'); ?>
 <br><br><br><br>
 <h1>Aqu&iacute; crees el teu usuari</h1>
 

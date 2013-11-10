@@ -2,7 +2,12 @@
 
 class usuaris extends CI_Controller {
 
+	public function __construct() {
+		// Call the Model constructor
+        parent::__construct();
+       $this->load->database();
 
+   	}
 
 	public function crear()
 	{
@@ -24,7 +29,17 @@ class usuaris extends CI_Controller {
 
 	public function llistar()
 	{
-		$this->load->view('llistar');
+		$this->load->model('users');
+
+      // echo 'hola'; die();		                   //$data['list'] = $this->model_users->get_user();
+		$data = $this->users->getusers();
+
+       //echo '<pre>Hola'; print_r($data); die();
+		$this->load->view('llistar',$data);
+		/*foreach($data as $index=>$camp){
+	
+		$this->load->view('llistar',$camp);
+		}*/
 	}
 
 	public function index()
@@ -32,12 +47,21 @@ class usuaris extends CI_Controller {
 		$this->load->view('menu');
 	}
 	
+	public function enviar()
+	{
+		$this->load->model('users');
+		$data['registres']=$this->users->guardar();
+		$this->load->view('rebut',$data);
+		
+	}
 	
 	public function hello()
 	{
 		$this->load->model('Say_hello');
 
  		$data['hola'] = $this->Say_hello->hola();
+
+ 		echo '<pre>Hola'; print_r($data); die();
 
 		$this->load->view('blog', $data);
 	}

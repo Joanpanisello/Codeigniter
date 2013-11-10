@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>	
-<?php include('includes.txt'); ?>
+<?php include('includes.html'); ?>
 </head>
 <body>
-	<?php include('navbar_top.txt'); ?>
+	<?php include('navbar_top.html'); ?>
 <br><br><br><br>
-<h1>Aqu&iacute; modifiques el teu usuari</h1>
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aqu&iacute; modifiques el teu usuari</h1>
+
+	<div align="right" style=margin-top:500px;>
+		<a href='javascript:history.back()'>
+			<button type="button" class="btn btn-primary">
+				Atras
+			</button>
+		</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+	</div> 	
 
 </body>
 </html>

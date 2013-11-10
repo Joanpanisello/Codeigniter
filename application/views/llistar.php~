@@ -40,7 +40,7 @@ $('#users_table').dataTable();
 </div> 
 
 <table cellpadding="0" cellspacing="0" border="0" id="users_table" class="table table-striped" width="100%">
-<thead bgcolor=#819FF7>
+<thead bgcolor=#819FF7 align="center">
 <tr>
 <th>Usuari</th>
 <th>Adre&ccedil;a</th>

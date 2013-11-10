@@ -22,7 +22,14 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-$('#users_table').dataTable();
+	$('#users_table').dataTable({    
+	"bPaginate": true,
+    "bLengthChange": true,
+    "bFilter": true,
+    "bSort": true,
+    "bInfo": true,
+    "bAutoWidth": false
+	});
 } );
 </script>
 
@@ -30,60 +37,68 @@ $('#users_table').dataTable();
 	
 </head>
 <body>
-	<?php include('navbar_top.txt'); ?>
-<br><br><br>
-<h3 align=center>Usuaris</h3>
-<br>
 
-<div align="right">
-  <a href='crear'>Crear Usuari&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-</div> 
+	<?php include('navbar_top.html'); ?><br><br><br>
 
-<table cellpadding="0" cellspacing="0" border="0" id="users_table" class="table table-striped" width="100%">
-<thead bgcolor=#819FF7>
-<tr>
-<th>Usuari</th>
-<th>Adre&ccedil;a</th>
-<th>Telefon</th>
-<th>DNI</th>
-<th>ID</th>
-<th>Accions</th>
-</tr>
-</thead>
-<tbody align=center>
-<tr>
-<td>Joan Panisello</td>
-<td>Nacional 340 Km 1091</td>
-<td>665 780 624</td>
-<td>47823595v</td>
-<td>01</td>
-<td><a href='modificar/01'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
-</tr>
-<tr>
-<td>Marc Montes&oacute;</td>
-<td>C/Sant Joan n 20</td>
-<td>623 764 535</td>
-<td>47211849k</td>
-<td>02</td>
-<td><a href='modificar/02'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
-</tr>
-<tr>
-<td>Carlos Meca</td>
-<td>C/Montaner n 10</td>
-<td>686 345 262</td>
-<td>48926482e</td>
-<td>03</td>
-<td><a href='modificar/03'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
-</tr>
-<tr>
-<td>Adolf Comes</td>
-<td>C/Pollastre n 11</td>
-<td>676 482 323</td>
-<td>47890232m</td>
-<td>04</td>
-<td><a href='modificar/04'>Modifica</a><a> | </a><a href='eliminar'>Elimina</a></td>
-</tr>
-</tbody>
-</table>
+	<h3 align=center>Usuaris</h3><br>
+
+	<!--<h1><?php //echo '<pre>'; print_r($this->_ci_cached_vars); die(); ?></h1>-->
+
+	<div align="right">
+	 				<a href='/codeigniterhelloworld/index.php/usuaris/crear'>
+						<button type="button" class="btn btn-success">
+				  			<span class="glyphicon glyphicon-plus"></span> 
+				  			<span class="glyphicon glyphicon-user"></span> 
+						</button>
+					</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div> 
+
+	<table cellpadding="0" cellspacing="0" border="0" id="users_table" class="table table-striped" width="100%" align="center">
+		<thead bgcolor=#819FF7>
+			<tr>
+				<th>Nom</th>
+				<th>Cognom</th>
+				<th>Adre&ccedil;a/th>
+				<th>Ciutat</th>
+				<th>Pais</th>
+				<th>Telefon</th>
+				<th>Accions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($this->_ci_cached_vars as $index => $persona){ ?>
+			<tr>
+				<td><?php echo $persona['Nom']; ?></td>
+				<td><?php echo $persona['Cognom']; ?></td>
+				<td><?php echo $persona['Adreça']; ?></td>
+				<td><?php echo $persona['Ciutat']; ?></td>
+				<td><?php echo $persona['Pais']; ?></td>
+				<td><?php echo $persona['Telefon']; ?></td>
+				<td>
+					<a href='/codeigniterhelloworld/index.php/usuaris/modificar/01'>
+						<button type="button" class="btn btn-warning btn-sm">
+				  			<span class="glyphicon glyphicon-pencil"></span> 
+						</button>
+					</a>&nbsp;
+					<a href='/codeigniterhelloworld/index.php/usuaris/eliminar'>
+						<button type="button" class="btn btn-danger btn-sm">
+				  			<span class="glyphicon glyphicon-remove"></span> 
+						</button>
+					</a> 
+				</td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
+	<div align="right" style=margin-top:176px;>
+		<a href='javascript:history.back()'>
+			<button type="button" class="btn btn-primary">
+				Atras
+			</button>
+		</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+	</div> 
+
 </body>
 </html>
+
