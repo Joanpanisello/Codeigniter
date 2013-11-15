@@ -23,7 +23,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#users_table').dataTable({    
-	"bPaginate": true,
+	"bPaginate": false,
     "bLengthChange": true,
     "bFilter": true,
     "bSort": true,
@@ -58,14 +58,21 @@ $(document).ready(function() {
 			<tr>
 				<th>Nom</th>
 				<th>Cognom</th>
-				<th>Adre&ccedil;a/th>
+				<th>Adre&ccedil;a</th>
 				<th>Ciutat</th>
 				<th>Pais</th>
 				<th>Telefon</th>
+				<th>ID</th>
 				<th>Accions</th>
 			</tr>
 		</thead>
 		<tbody>
+
+			
+
+
+
+			
 			<?php foreach($this->_ci_cached_vars as $index => $persona){ ?>
 			<tr>
 				<td><?php echo $persona['Nom']; ?></td>
@@ -74,13 +81,14 @@ $(document).ready(function() {
 				<td><?php echo $persona['Ciutat']; ?></td>
 				<td><?php echo $persona['Pais']; ?></td>
 				<td><?php echo $persona['Telefon']; ?></td>
+				<td><?php echo $persona['id']; ?></td>
 				<td>
-					<a href='/codeigniterhelloworld/index.php/usuaris/modificar/01'>
+					<a href='/codeigniterhelloworld/index.php/usuaris/modificar/<?php echo $persona['id']; ?>'>
 						<button type="button" class="btn btn-warning btn-sm">
 				  			<span class="glyphicon glyphicon-pencil"></span> 
 						</button>
 					</a>&nbsp;
-					<a href='/codeigniterhelloworld/index.php/usuaris/eliminar'>
+					<a href='/codeigniterhelloworld/index.php/usuaris/eliminare/<?php echo $persona['id']; ?>'>
 						<button type="button" class="btn btn-danger btn-sm">
 				  			<span class="glyphicon glyphicon-remove"></span> 
 						</button>

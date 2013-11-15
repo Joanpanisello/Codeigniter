@@ -7,16 +7,21 @@
 
 	<?php include('navbar_top.html'); ?>
 <br><br><br><br>
-<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aqu&iacute; elimines el teu usuari</h1>
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuari Eliminat</h1>
+
+<form method="post" accept-charset="utf-8" action="/codeigniterhelloworld/index.php/usuaris/eliminare" />
+<input type="text" name="id" id="id" value="<?php echo $ID;?>" maxlength="20" size="20" style="width:0%" />
+
+
 
 	<div align="right" style=margin-top:500px;>
-		<a href='javascript:history.back()'>
-			<button type="button" class="btn btn-primary">
-				Atras
+		
+			<button type="submit" class="btn btn-primary">
+				Inici
 			</button>
-		</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
 	</div> 	
-
+</form>
 
 </body>
 </html>

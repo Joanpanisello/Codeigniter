@@ -16,15 +16,10 @@ class usuaris extends CI_Controller {
 	
 	public function modificar($id)
 	{
-		$this->load->view('modificar_usuari');
-	
+		$data = array('ID'=> $id);
+		$this->load->view('modificar_usuari', $data);
+		
 	}
-
-	public function eliminar()
-	{
-		$this->load->view('elimina_usuari');
-	}
-	
 
 
 	public function llistar()
@@ -54,6 +49,27 @@ class usuaris extends CI_Controller {
 		$this->load->view('rebut',$data);
 		
 	}
+
+	public function adios()
+	{
+		$this->load->model('users');
+		$data['registres']=$this->users->modificar();
+		//echo '<pre>'; print_r($data); die();
+		$this->load->view('rebut2',$data);
+		
+	}
+
+	public function eliminare($id)
+	{
+		//$data = array('ID'=> $id);
+		$this->load->model('users');
+		$this->users->eliminar($id);
+		//echo '<pre>'; print_r($data); die();
+		$this->load->view('elimina_usuari2');
+		
+	}
+
+
 	
 	public function hello()
 	{

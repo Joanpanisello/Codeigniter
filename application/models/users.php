@@ -11,26 +11,18 @@ class Users extends CI_Model{
         parent::__construct();
         $this->load->database();
     }
+
+
     function getusers()
     {
        
-    	
-
-
-        $this->db->select('Nom,Cognom,Adreça,Ciutat,Pais,Telefon');
+        $this->db->select('id,Nom,Cognom,Adreça,Ciutat,Pais,Telefon');
     	$query = $this->db->get('usuaris');
 
-    	
-
-        //echo '<pre>'; print_r($data); die();
-
-
-    	
-
     	return $query->result_array();
-
-     
 	}
+
+
      function guardar()
     {
        $data = array(
@@ -41,6 +33,7 @@ class Users extends CI_Model{
         'Ciutat'=> $_POST['ciutat'],
         'Pais'=> $_POST['pais'],
         'Telefon'=> $_POST['telefon']
+        
 
         ); 
        
@@ -49,4 +42,34 @@ class Users extends CI_Model{
 
      
     }
+
+
+     function modificar()
+    {
+       $data = array(
+
+        'Nom'=> $_POST['nom'],
+        'Cognom'=> $_POST['cognom'],
+        'Adreça'=> $_POST['adresa'],
+        'Ciutat'=> $_POST['ciutat'],
+        'Pais'=> $_POST['pais'],
+        'Telefon'=> $_POST['telefon'],
+        'id'=> $_POST['id']
+        ); 
+
+
+       $this->db->where('id', $_POST['id']);
+       $this->db->update('usuaris', $data);
+    }
+
+
+     function eliminar($id)
+    {
+       
+       $this->db->delete('usuaris', array('id' => $id)); 
+       $this->db->delete('usuaris', array('id' => $id)); 
+
+     
+    }
+
 }
