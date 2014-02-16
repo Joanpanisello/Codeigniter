@@ -6,6 +6,8 @@ class usuaris extends CI_Controller {
 		// Call the Model constructor
         parent::__construct();
        $this->load->database();
+       $this->load->helper('url');
+
 
    	}
 
@@ -13,6 +15,17 @@ class usuaris extends CI_Controller {
 	{
 		$this->load->view('crear_usuari');
 	}
+
+     public function crear2()
+    {
+            $this->load->view('prova_json2');
+    }
+
+     public function crear3()
+    {
+            $this->load->view('index2');
+    }
+
 	
 	public function modificar($id)
 	{

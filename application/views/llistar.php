@@ -4,14 +4,30 @@
 
 
  
-<!-- jQuery -->
+<!-- ####################   jQuery   ######################## -->
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
 
-<!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 
 
-<!-- Bootstrap -->
+<!-- ####################   DataTables   #################### -->
+
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="http://www.datatables.net/release-datatables/media/css/demo_page.css"></script>
+<script type="text/javascript" charset="utf8" src="http://www.datatables.net/release-datatables/media/css/demo_table.css"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/TableTools/media/js/ZeroClipboard.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/TableTools/media/js/TableTools.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/ColReorder/media/js/ColReorder.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/ColReorder/media/css/ColReorder.css"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/FixedHeader/js/FixedHeader.js"></script>
+<style media="screen" type="text/css">
+@import "<?php echo base_url() ?>application/assets/DataTables/extras/TableTools/media/css/TableTools.css";
+.FixedHeader_Cloned th { background-color: blue; }
+</style>
+
+
+<!-- ####################   Bootstrap   ##################### -->
+
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
 <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
@@ -20,16 +36,15 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
 
-<script type="text/javascript">
+<script charset="utf-8" type="text/javascript">
 $(document).ready(function() {
-	$('#users_table').dataTable({    
-	"bPaginate": false,
-    "bLengthChange": true,
-    "bFilter": true,
-    "bSort": true,
-    "bInfo": true,
-    "bAutoWidth": false
-	});
+	var oTable = $('#users_table').dataTable({  
+	"sDom": 'T<"clear">lfrtip',
+	"sDom": 'T<"clear">Rlfrtip',
+	"oTableTools": {
+            "sSwfPath": "<?php echo base_url() ?>application/assets/DataTables/extras/TableTools/media/swf/copy_csv_xls_pdf.swf"
+        }
+	}); new FixedHeader( oTable );
 } );
 </script>
 
@@ -38,11 +53,11 @@ $(document).ready(function() {
 </head>
 <body>
 
-	<?php include('navbar_top.html'); ?><br><br><br>
+
+	<!--<?php include('navbar_top.html'); ?><br><br><br>-->
 
 	<h3 align=center>Usuaris</h3><br>
 
-	<!--<h1><?php //echo '<pre>'; print_r($this->_ci_cached_vars); die(); ?></h1>-->
 
 	<div align="right">
 	 				<a href='/codeigniterhelloworld/index.php/usuaris/crear'>
@@ -52,7 +67,8 @@ $(document).ready(function() {
 						</button>
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</div> 
-
+	<br><br>
+	
 	<table cellpadding="0" cellspacing="0" border="0" id="users_table" class="table table-striped" width="100%" align="center">
 		<thead bgcolor=#819FF7>
 			<tr>

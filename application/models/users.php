@@ -34,7 +34,6 @@ class Users extends CI_Model{
         'Pais'=> $_POST['pais'],
         'Telefon'=> $_POST['telefon']
         
-
         ); 
        
 
