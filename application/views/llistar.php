@@ -20,9 +20,13 @@
 <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/ColReorder/media/js/ColReorder.js"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/ColReorder/media/css/ColReorder.css"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/FixedHeader/js/FixedHeader.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/ColVis/media/js/ColVis.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>application/assets/DataTables/extras/FixedColumns/media/js/FixedColumns.js"></script>
+
 <style media="screen" type="text/css">
 @import "<?php echo base_url() ?>application/assets/DataTables/extras/TableTools/media/css/TableTools.css";
-.FixedHeader_Cloned th { background-color: blue; }
+@import "<?php echo base_url() ?>application/assets/DataTables/extras/ColVis/media/css/ColVis.css";
+
 </style>
 
 
@@ -38,13 +42,18 @@
 
 <script charset="utf-8" type="text/javascript">
 $(document).ready(function() {
-	var oTable = $('#users_table').dataTable({  
-	"sDom": 'T<"clear">lfrtip',
-	"sDom": 'T<"clear">Rlfrtip',
+ var oTable = $('#users_table').dataTable({  
+	"sScrollY": "300px",
+    "sScrollX": "100%",
+    "sScrollXInner": "150%",
+    "bScrollCollapse": true,
+    "bPaginate": false,
+	"sDom": 'T<"clear">R<"clear">Clfrtip',
 	"oTableTools": {
             "sSwfPath": "<?php echo base_url() ?>application/assets/DataTables/extras/TableTools/media/swf/copy_csv_xls_pdf.swf"
         }
-	}); new FixedHeader( oTable );
+	}); 
+ 	new FixedColumns( oTable );
 } );
 </script>
 
